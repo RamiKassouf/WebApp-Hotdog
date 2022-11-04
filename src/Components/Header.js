@@ -1,4 +1,4 @@
-import HeaderLogo from "./Images/HeaderLogo.svg";
+import HotDogLogo from "../Images/HotDogLogo.gif";
 import Button from "react-bootstrap/Button";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -9,7 +9,16 @@ function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="#home">HotDog</Navbar.Brand>
+        <Navbar.Brand href="#home">
+            <img
+              alt="Hot Dog Logo"
+              src={HotDogLogo}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{' '}
+            HotDog
+          </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
