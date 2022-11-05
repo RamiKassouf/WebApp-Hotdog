@@ -1,17 +1,51 @@
-
-.navbar-nav .btn-outline-success{
+/* mode: Dark */
+.light{
+  background-color: rgb(231, 228, 228);
+  color: black;
+}
+.dark{
+  background-color: #1a1919;
+  color: white;
+}
+/*Header CSS*/
+#light .navbar-nav .btn-outline-success{
     --bs-btn-border-radius: 20px;
-    --bs-btn-color: white;
-    --bs-btn-bg: black;
-    --bs-btn-border-color: black;
+    --bs-btn-color: black;
+    --bs-btn-bg: rgb(187, 187, 187);
+    --bs-btn-border-color: rgb(187, 187, 187);
 
     --bs-btn-hover-color: white;
-    --bs-btn-hover-bg: rgba(0, 0, 0, 0.4);
-    --bs-btn-hover-border-color: rgba(0, 0, 0, 0.4);
-    --bs-btn-active-color: black;
+    --bs-btn-hover-bg: rgba(128, 128, 128, 0.7);
+    --bs-btn-hover-border-color: rgba(128, 128, 128, 0.7);
+
+    --bs-btn-active-color: white;
     --bs-btn-active-bg: blue;
     --bs-btn-active-border-color: blue;
 }
+#dark .navbar-nav .btn-outline-success {
+  --bs-btn-border-radius: 20px;
+  --bs-btn-color: white;
+  --bs-btn-bg: black;
+  --bs-btn-border-color: black;
+
+  --bs-btn-hover-color: white;
+  --bs-btn-hover-bg: rgba(0, 0, 0, 0.4);
+  --bs-btn-hover-border-color: rgba(0, 0, 0, 0.4);
+
+  --bs-btn-active-color: black;
+  --bs-btn-active-bg: blue;
+  --bs-btn-active-border-color: blue;
+}
 .navbar-nav .btn{
   --bs-btn-padding-x: 1.6rem;
+  font-weight: bold;
 }
+.navbar-nav #darkModeSwitch{
+  align-self: center;
+}
+.navbar-nav custom-switch{
+  --bs-btn-active-color: white;
+  --bs-btn-active-bg: black;
+  --bs-btn-active-border-color: black;
+}
+
