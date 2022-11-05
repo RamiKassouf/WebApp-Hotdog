@@ -2,19 +2,19 @@ import './App.css';
 import React from 'react';
 import { useState } from 'react';
 import Header from"./Components/Header.js";
-export const ThemeContext = React.createContext(null);
 export default function App() {
   const [theme, setTheme] = useState('light');
+  const [invtheme, setInvTheme] = useState('dark');
   const toggleTheme = () => {
     setTheme((curr)=> (curr === 'light' ? 'dark' : 'light'));
+    setInvTheme((curr)=> (curr === 'light' ? 'dark' : 'light'));
   }
   return (
-    <ThemeContext.Provider value={{theme, toggleTheme}}>
     <div className="App" id={theme}>
       <Header 
       theme={theme}
+      invtheme={invtheme}
       toggleTheme={toggleTheme}/>
     </div>
-    </ThemeContext.Provider>
   );
 }
