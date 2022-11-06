@@ -32,7 +32,7 @@ const handleSignupShow = () => setShowSignup(true);
   }
 
   return (
-    <Navbar fixed="top" collapseOnSelect expand="lg" bg={props.theme} variant={props.theme}>
+    <Navbar sticky="top" collapseOnSelect expand="lg" bg={props.theme} variant={props.theme}>
       <Container>
         <Navbar.Brand href="#home">
             <img
