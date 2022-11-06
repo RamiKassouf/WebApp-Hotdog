@@ -1,18 +1,21 @@
 import HotDogLogo from "../Images/HotDogLogo.gif";
-//Nav.link and button imports
+//Nava.link  and button imports
 import Nav from 'react-bootstrap/Nav';
 import Button from "react-bootstrap/Button";
 //Modal imports
 import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import Form from 'react-bootstrap/Form';
+// Modal Grid imports
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
-export default function Login(props) {
-
+export default function SignUp(props) {
+    const enableSignup = () => {document.getElementById("signupButton").disabled = false;}
     return (
-        <Nav.Link eventKey={2} href="#Login">
-            <Button className={props.theme} variant="primary" onClick={props.handleShow}>Sign In</Button>
-            <Modal show={props.show} onHide={props.handleClose} contentClassName={props.theme} centered>
+        <Nav.Link eventKey={2} href="#Signup">
+            <Modal show={props.show} onHide={props.handleClose} contentClassName={props.theme} size='lg' centered>
                 <Modal.Header closeButton>
                 <Modal.Title>
                     <img
@@ -22,7 +25,7 @@ export default function Login(props) {
                         height="30"
                         className="d-inline-block align-center mb-2"
                         />{' '}
-                    Sign In
+                    Sign Up
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -44,17 +47,23 @@ export default function Login(props) {
                         <Form.Label >
                         Password
                         </Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
+                            <Form.Control type="password" 
+                            placeholder="Password" 
+                            aria-describedby="passwordHelpBlock"
+                            />
+                        <Form.Text id="passwordHelpBlock" muted>
+                            Your password must be 8-20 characters long, contain letters and numbers,
+                            and must not contain spaces, special characters, or emoji.
+                        </Form.Text>
                      </Form.Group>
                      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Keep me signed in" />
+                        <Form.Check type="checkbox" label="I have read and agreed to the terms and conditions" onchecked={enableSignup}/>
                     </Form.Group>
                 </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <h6>Dont't have an account? <a href="#SignUp" onClick={props.handleSwitchToSignup} >Sign Up</a></h6>
-                <Button className={props.theme} variant="primary" onClick={props.handleClose}>
-                    Sign In
+                <Button className={props.theme} variant="primary" onClick={props.handleClose} >
+                    Sign Up
                 </Button>
                 </Modal.Footer>
             </Modal>

@@ -1,11 +1,14 @@
+//My components
 import HotDogLogo from "../Images/HotDogLogo.gif";
 import Login from "./Login";
-
+import Signup from "./Signup";
+//Navbar imports
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
+//useState for Modal components (Login and Signup)
 import { useState } from "react";
 
 
@@ -15,11 +18,18 @@ function Header(props) {
  const changelanguage = (e) => {
     document.getElementById('collasible-nav-dropdown2').innerHTML = e.target.innerHTML;
   }
-  //Login Modal
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+  //SignUp Modal
+const [showSignup, setShowSignup] = useState(false);
+const handleSignupClose = () => setShowSignup(false);
+const handleSignupShow = () => setShowSignup(true);
+    //Login Modal
+  const [showLogin, setShowLogin] = useState(false);
+  const handleLoginClose = () => setShowLogin(false);
+  const handleLoginShow = () => setShowLogin(true);
+  const handleSwitchToSignup = () => {
+    handleLoginClose();
+    handleSignupShow();
+  }
 
   return (
     <Navbar fixed="top" collapseOnSelect expand="lg" bg={props.theme} variant={props.theme}>
@@ -28,8 +38,8 @@ function Header(props) {
             <img
               alt="Hot Dog Logo"
               src={HotDogLogo}
-              width="30"
-              height="30"
+              width="40"
+              height="40"
               className="d-inline-block align-top"
             />{' '}
             HotDog
@@ -58,7 +68,18 @@ function Header(props) {
             <Login 
               theme={props.theme}
               invtheme={props.invtheme}
+              show={showLogin}
+              handleClose={handleLoginClose}
+              handleShow={handleLoginShow}
+              handleSwitchToSignup={handleSwitchToSignup}
             />
+            <Signup 
+              theme={props.theme}
+              invtheme={props.invtheme}
+              show={showSignup}
+              handleClose={handleSignupClose}
+              handleShow={handleSignupShow}
+              />
           </Nav>
         </Navbar.Collapse>
       </Container>

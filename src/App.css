@@ -1,14 +1,14 @@
 /* mode: Dark */
-.light{
+/* .light{
   background-color: rgb(231, 228, 228);
   color: black;
 }
 .dark{
   background-color: #1a1919;
   color: white;
-}
+} */
 /*Header CSS*/
-#light .btn-primary{
+.light.btn-primary{
     --bs-btn-border-radius: 20px;
     --bs-btn-color: black;
     --bs-btn-bg: rgb(210, 188, 219);
@@ -19,7 +19,7 @@
     --bs-btn-hover-border-color: rgba(128, 128, 128, 0.7);
 
 }
-#dark .btn-primary {
+.dark.btn-primary {
   --bs-btn-border-radius: 20px;
   --bs-btn-color: white;
   --bs-btn-bg: rgb(98, 69, 156);
@@ -33,7 +33,7 @@
   --bs-btn-active-bg: rgba(98, 69, 156, 0.4);;
   --bs-btn-active-border-color: rgba(98, 69, 156, 0.7);;
 }
-.navbar-nav .btn{
+.btn{
   --bs-btn-padding-x: 1.6rem;
   font-weight: bold;
 }
@@ -51,4 +51,45 @@
     .mt-7px{
   margin-top: 7px;
 }
+
+/* Modal */
+.modal-content{
+  border: none;
+}
+.light.modal-content{
+  background-color: rgb(231, 228, 228);
+  color: black;
+
+}
+.dark.modal-content{
+  background-color: #292929;
+  color: white;
+}
+.modal-header{
+  border-bottom: none;
+  padding: 16px 16px 1px 16px;
+}
+.modal-title{
+  font-weight: bold;
+}
+.btn-close:hover{
+  transform: rotate(90deg);
+  transition-duration: 1s;
+}
+.btn-close{
+  transform: rotate(-90deg);
+  transition-duration: 1s;
+}
+.dark .btn-close{
+  background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e7e3e3'%3E%3Cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E")center/1em auto no-repeat;;
+}
+
+.modal-footer{
+  border-top: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1px 12px 12px 12px;
+}
+
+/* Signup Modal */
 
