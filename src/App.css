@@ -92,4 +92,11 @@
 }
 
 /* Signup Modal */
-
+.slash{
+  width: min-content;
+  padding: 0;
+  font-size: 1.4em;
+}
+.gender{
+  padding-top: 5px;
+}
