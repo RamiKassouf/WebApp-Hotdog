@@ -20,7 +20,7 @@ function Header(props) {
   }
   //SignUp Modal
 const [showSignup, setShowSignup] = useState(false);
-const handleSignupClose = () => setShowSignup(false);
+const handleSignupClose = () => {setShowSignup(false); console.log("handleSignupClose() called");}
 const handleSignupShow = () => setShowSignup(true);
     //Login Modal
   const [showLogin, setShowLogin] = useState(false);

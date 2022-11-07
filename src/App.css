@@ -100,3 +100,7 @@
 .gender{
   padding-top: 5px;
 }
+.btn-primary:disabled{
+  background-color: rgb(167, 167, 167);
+  border-color: rgb(167, 167, 167);
+}

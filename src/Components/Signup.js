@@ -12,10 +12,25 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 export default function SignUp(props) {
-    const enableSignup = () => {document.getElementById("signupButton").disabled = false;}
+
+    const [checked, setChecked] = useState(false); 
+  const handleChange = () => { 
+    setChecked(!checked); 
+    
+  }; 
+  const closeSignup = () => {props.handleClose(); setChecked(false);}
+    const handleSignup = () => {
+        if(checked === true ){
+            handleChange();
+        }
+        else{
+            handleChange();
+        }
+
+    console.log("enableSignup() called");}
     return (
         <Nav.Link eventKey={2} href="#Signup">
-            <Modal show={props.show} onHide={props.handleClose} contentClassName={props.theme} size='lg' centered>
+            <Modal show={props.show} onHide={closeSignup} contentClassName={props.theme} size='lg' centered>
                 <Modal.Header closeButton>
                 <Modal.Title>
                     <img
@@ -147,12 +162,12 @@ export default function SignUp(props) {
                         </Col>
                     </Row>   
                      <Form.Group className="mb-3" controlId="terms.formBasicCheckbox">
-                        <Form.Check type="checkbox" label="I have read and agreed to the terms and conditions" onchecked={enableSignup}/>
+                        <Form.Check type="checkbox" label="I have read and agreed to the terms and conditions" onChange={handleSignup}  />
                     </Form.Group>
                 </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                <Button className={props.theme} variant="primary" onClick={props.handleClose} >
+                <Button id="signupButton" className={props.theme} variant="primary" onClick={props.handleClose} disabled={!checked}>
                     Sign Up
                 </Button>
                 </Modal.Footer>
