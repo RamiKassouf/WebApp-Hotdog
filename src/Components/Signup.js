@@ -70,6 +70,7 @@ export default function SignUp(props) {
                         </Col>
                     </Row>
                     <Dateofbirth 
+                        group="grp1"
                         theme={props.theme}
                     />
                     <Row className="email">
