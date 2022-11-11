@@ -1,5 +1,5 @@
 import HotDogLogo from "../Images/HotDogLogo.gif";
-import Dateofbirth from "./Dateofbirth";
+import Dateofbirth from "./DoBandGender";
 //Nava.link  and button imports
 import Nav from 'react-bootstrap/Nav';
 import Button from "react-bootstrap/Button";
@@ -18,7 +18,11 @@ export default function SignUp(props) {
     setChecked(!checked); 
     
   }; 
-  const closeSignup = () => {props.handleClose(); setChecked(false);}
+  const closeSignup = () => {
+    props.handleClose(); 
+    setChecked(false);
+}
+
     const handleSignup = () => {
         if(checked === true ){
             handleChange();
@@ -26,8 +30,7 @@ export default function SignUp(props) {
         else{
             handleChange();
         }
-
-    console.log("enableSignup() called");}
+    }
     return (
         <Nav.Link eventKey={2} href="#Signup">
             <Modal show={props.show} onHide={closeSignup} contentClassName={props.theme} size='lg' centered>
@@ -66,7 +69,9 @@ export default function SignUp(props) {
                             </Form.Group>
                         </Col>
                     </Row>
-                    <Dateofbirth />
+                    <Dateofbirth 
+                        theme={props.theme}
+                    />
                     <Row className="email">
                         <Col>
                             {/* Email */}
@@ -145,8 +150,7 @@ export default function SignUp(props) {
                                     aria-describedby="passwordHelpBlock"
                                     />
                                 <Form.Text id="passwordHelpBlock" muted>
-                                    Your password must be 8-20 characters long, contain letters and numbers,
-                                    and must not contain spaces, special characters, or emoji.
+                                    Your password must be 8-20 characters long.
                                 </Form.Text>
                             </Form.Group>
                         </Col>

@@ -35,14 +35,14 @@ const handleSignupShow = () => setShowSignup(true);
     <Navbar sticky="top" collapseOnSelect expand="lg" bg={props.theme} variant={props.theme}>
       <Container>
         <Navbar.Brand href="#home">
-            <img
+            Hot{''}<img
               alt="Hot Dog Logo"
               src={HotDogLogo}
-              width="40"
-              height="40"
+              width="30"
+              height="30"
               className="d-inline-block align-top"
-            />{' '}
-            HotDog
+            />{''}
+            Dog
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

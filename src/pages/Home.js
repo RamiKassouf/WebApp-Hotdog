@@ -1,7 +1,7 @@
-import './App.css';
+import '../Home.css';
 import React from 'react';
 import { useState } from 'react';
-import Header from"./Components/Header.js";
+import Header from"../Components/Header.js";
 export default function App() {
   const [theme, setTheme] = useState('light');
   const [invtheme, setInvTheme] = useState('dark');

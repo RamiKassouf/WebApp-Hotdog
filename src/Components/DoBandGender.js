@@ -46,7 +46,7 @@ export default function Dateofbirth(props) {
                 <Row>
                     <Form.Label>Gender</Form.Label>
                 </Row>
-                <Row className="gender">
+                <Row className={`${props.theme} gender`}>
                     <Col>
                         <Form.Check name="group1" type="radio" label="Male" />
                     </Col>

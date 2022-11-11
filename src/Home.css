@@ -92,6 +92,14 @@
 }
 
 /* Signup Modal */
+.light.modal-content .form-control:focus-within {
+  border-color: rgb(98 69 156 / 25%);
+  box-shadow: 0 0 0 0.25rem rgb(98 69 156 / 25%);
+}
+.dark.modal-content .form-control:focus-within {
+  border-color: rgb(98 69 156 / 25%);
+  box-shadow: 0 0 0 0.25em rgb(98 69 156 / 60%);
+}
 .slash{
   width: min-content;
   padding: 0;
@@ -99,6 +107,23 @@
 }
 .gender{
   padding-top: 5px;
+  padding-bottom:5px;
+}
+.light .form-check:focus-within{
+  border:none;
+  box-shadow: 0 0 0 0.25rem rgb(98 69 156 / 25%);
+}
+.dark .form-check-input:focus {
+  border: none;
+  box-shadow: 0 0 0 0.2em rgb(98 69 156 / 50%);
+}
+.light .form-check-input:checked {
+  background-color: rgb(210, 188, 219);
+  border-color: rgb(210, 188, 219);
+}
+.dark .form-check-input:checked{
+  background-color: rgb(98, 69, 156);
+  border-color: rgb(98, 69, 156);
 }
 .btn-primary:disabled{
   background-color: rgb(167, 167, 167);
