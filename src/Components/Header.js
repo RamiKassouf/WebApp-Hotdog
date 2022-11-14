@@ -18,29 +18,29 @@ function Header(props) {
  const changelanguage = (e) => {
     document.getElementById('collasible-nav-dropdown2').innerHTML = e.target.innerHTML;
   }
-  //SignUp Modal
-const [showSignup, setShowSignup] = useState(false);
-const handleSignupClose = () => {setShowSignup(false); console.log("handleSignupClose() called");}
-const handleSignupShow = () => setShowSignup(true);
-    //Login Modal
-  const [showLogin, setShowLogin] = useState(false);
-  const handleLoginClose = () => setShowLogin(false);
-  const handleLoginShow = () => setShowLogin(true);
-  const handleSwitchToSignup = () => {
-    handleLoginClose();
-    handleSignupShow();
-  }
+//   //SignUp Modal
+// const [showSignup, setShowSignup] = useState(false);
+// const handleSignupClose = () => {setShowSignup(false); }
+// const handleSignupShow = () => setShowSignup(true);
+//     //Login Modal
+//   const [showLogin, setShowLogin] = useState(false);
+//   const handleLoginClose = () => setShowLogin(false);
+//   const handleLoginShow = () => setShowLogin(true);
+//   const handleSwitchToSignup = () => {
+//     handleLoginClose();
+//     handleSignupShow();
+//   }
 
   return (
     <Navbar sticky="top" collapseOnSelect expand="lg" bg={props.theme} variant={props.theme}>
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
             Hot{''}<img
               alt="Hot Dog Logo"
               src={HotDogLogo}
               width="30"
               height="30"
-              className="d-inline-block align-top"
+              className="d-inline-block align-top logo"
             />{''}
             Dog
           </Navbar.Brand>
@@ -68,17 +68,17 @@ const handleSignupShow = () => setShowSignup(true);
             <Login 
               theme={props.theme}
               invtheme={props.invtheme}
-              show={showLogin}
-              handleClose={handleLoginClose}
-              handleShow={handleLoginShow}
-              handleSwitchToSignup={handleSwitchToSignup}
+              show={props.showLogin}
+              handleClose={props.handleLoginClose}
+              handleShow={props.handleLoginShow}
+              handleSwitchToSignup={props.handleSwitchToSignup}
             />
             <Signup 
               theme={props.theme}
               invtheme={props.invtheme}
-              show={showSignup}
-              handleClose={handleSignupClose}
-              handleShow={handleSignupShow}
+              show={props.showSignup}
+              handleClose={props.handleSignupClose}
+              handleShow={props.handleSignupShow}
               />
           </Nav>
         </Navbar.Collapse>

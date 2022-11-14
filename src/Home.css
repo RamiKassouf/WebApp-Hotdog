@@ -7,7 +7,18 @@
   background-color: #1a1919;
   color: white;
 } */
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 /*Header CSS*/
+.logo{
+  padding-bottom: 2px;
+}
 .light.btn-primary{
     --bs-btn-border-radius: 20px;
     --bs-btn-color: black;
@@ -171,4 +182,14 @@
 .btn-primary:disabled{
   background-color: rgb(167, 167, 167);
   border-color: rgb(167, 167, 167);
+}
+
+/* Carousel */
+
+.carousel-caption{
+  position: relative;
+  right:0%;
+  left:0%;
+  bottom:7em;
+
 }

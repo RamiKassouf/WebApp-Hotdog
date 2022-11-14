@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../Components/Header"
 // import paseto from "paseto";
 
 export default  function Hello() {
@@ -40,6 +41,7 @@ export default  function Hello() {
 
     return(
         <div>
+            <Header />
             <h1>Hello {name}</h1>
         </div>
     )
