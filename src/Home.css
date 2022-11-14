@@ -109,16 +109,59 @@
   padding-top: 5px;
   padding-bottom:5px;
 }
+.gender .form-check{
+  box-shadow: none !important;
+}
+.light.gender .form-check-input:focus{
+  box-shadow: 0 0 0 0.2em rgb(98 69 156 / 25%);
+}
+.dark.gender .form-check-input:focus {
+  box-shadow: 0 0 0 0.2em rgb(98 69 156 / 50%);
+}
 .light .form-check:focus-within{
-  border:none;
+  border:none ;
   box-shadow: 0 0 0 0.25rem rgb(98 69 156 / 25%);
 }
 .dark .form-check-input:focus {
   border: none;
   box-shadow: 0 0 0 0.2em rgb(98 69 156 / 50%);
 }
-.light .form-check-input:checked {
+/* datepicker CSS */
+.light .react-datepicker__day--keyboard-selected{
+  background-color: rgb(98 69 156) !important;
+}
+.light .react-datepicker__day--selected{
+  background-color: rgb(98 69 156) !important;
+}
+.dark .react-datepicker__day--keyboard-selected {
+  background-color: rgb(210, 188, 219) !important;
+}
+
+.dark .react-datepicker__day--selected {
+  background-color: rgb(210, 188, 219) !important;
+}
+ /* .dark .react-datepicker__header {
   background-color: rgb(210, 188, 219);
+}
+.dark .react-datepicker{
+  background-color: #292929;
+}
+.dark .react-datepicker__day{
+  color: white;
+}
+.dark .react-datepicker__day--disabled{
+  color: #ccc ;
+}
+.dark .react-datepicker__navigation-icon {
+  border-color: #000 !important;
+}
+.dark .react-datepicker__navigation-icon:focus {
+  border-color: #000 !important;
+}  */
+
+/* end of datepicker CSS */
+.light .form-check-input:checked {
+  background-color: rgb(210, 188, 219) ;
   border-color: rgb(210, 188, 219);
 }
 .dark .form-check-input:checked{
