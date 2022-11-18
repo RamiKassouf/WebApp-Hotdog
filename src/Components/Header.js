@@ -1,14 +1,14 @@
 //My components
 import HotDogLogo from "../Images/HotDogLogo.gif";
 import Login from "./Login";
-import Signup from "./Signup";
+import UserSignUp from "./UserInfo";
 //Navbar imports
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
-//useState for Modal components (Login and Signup)
+//useState for Modal components (Login and UserSignUp)
 import { useState } from "react";
 
 
@@ -18,18 +18,7 @@ function Header(props) {
  const changelanguage = (e) => {
     document.getElementById('collasible-nav-dropdown2').innerHTML = e.target.innerHTML;
   }
-//   //SignUp Modal
-// const [showSignup, setShowSignup] = useState(false);
-// const handleSignupClose = () => {setShowSignup(false); }
-// const handleSignupShow = () => setShowSignup(true);
-//     //Login Modal
-//   const [showLogin, setShowLogin] = useState(false);
-//   const handleLoginClose = () => setShowLogin(false);
-//   const handleLoginShow = () => setShowLogin(true);
-//   const handleSwitchToSignup = () => {
-//     handleLoginClose();
-//     handleSignupShow();
-//   }
+
 
   return (
     <Navbar sticky="top" collapseOnSelect expand="lg" bg={props.theme} variant={props.theme}>
@@ -50,8 +39,8 @@ function Header(props) {
             <Nav.Link href="#Breeds">Breeds</Nav.Link>
             <Nav.Link href="#Download">Download</Nav.Link>
             <NavDropdown title="Subscription" id="collasible-nav-dropdown" className="allign-middle" menuVariant={props.theme}>
-              <NavDropdown.Item href="#Free">Free</NavDropdown.Item>
-              <NavDropdown.Item href="#Premium">Premium</NavDropdown.Item>
+              <NavDropdown.Item >Free</NavDropdown.Item>
+              <NavDropdown.Item >Premium</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
@@ -73,7 +62,7 @@ function Header(props) {
               handleShow={props.handleLoginShow}
               handleSwitchToSignup={props.handleSwitchToSignup}
             />
-            <Signup 
+            <UserSignUp 
               theme={props.theme}
               invtheme={props.invtheme}
               show={props.showSignup}

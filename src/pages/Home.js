@@ -1,4 +1,4 @@
-import '../Home.css';
+import '../Styling/Home.css';
 import React from 'react';
 import { useState } from 'react';
 import Header from"../Components/Header.js";
@@ -43,7 +43,7 @@ export default function App() {
       handleSignupClose={handleSignupClose}
       handleSignupShow={handleSignupShow}
       />
-      <footer>
+      <footer className='footer'>
         <p>Created by <a href="HotDogTM">HotDogTM</a></p>
       </footer>
     </div>

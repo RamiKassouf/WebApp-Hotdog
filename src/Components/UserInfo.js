@@ -11,9 +11,24 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 //backend imports
+import { useNavigate } from "react-router-dom";
 
-export default function SignUp(props) {
+export default function UserSignUp(props) {
     //front end functions
+    const [validated,setValidated]=useState(false);
+    const genders=document.querySelectorAll('input[name].form-check-input');
+    const termscheckbox=document.getElementById('terms-checkbox');
+    const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
+
+
     const [checked, setChecked] = useState(false); 
     useEffect(() => {
         if (props.show==false) {
@@ -22,9 +37,15 @@ export default function SignUp(props) {
     }, [props.show]);
     
     const handleSignup = () => {
+        if(termscheckbox.checked){
+            termscheckbox.setCustomValidity('');
+        }else{
+            termscheckbox.setCustomValidity('Accept terms and conditions');
+        }
         setChecked(!checked); 
     }
     //backend functions
+    const navigate=useNavigate();
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
     const [dateofbirth, setDateofbirth] = useState('');
@@ -40,8 +61,27 @@ export default function SignUp(props) {
 
     async function registerUser(event) {
 		event.preventDefault()
+        //validation
+        genders.forEach(
+            (e)=>{
+                if(e.checked){
+                    e.setCustomValidity('');
+                }else{
+                    if (genders[0].checked==true || genders[1].checked==true || genders[2].checked==true) {
+                    e.setCustomValidity('')
+                    }else{ e.setCustomValidity('Please select')}
+                   
+                }
+            }
+        )
+
+
+        handleSubmit(event);
         if(password !== confirmPassword){
-            alert('Passwords do not match')
+            document.getElementById('password').setCustomValidity('Passwords do not match');
+            document.getElementById('confpassword').setCustomValidity('Passwords do not match');
+            document.getElementById('password').reportValidity();
+            document.getElementById('confirmPassword').reportValidity();
             
         }else{
             const response = await fetch('http://127.0.0.1:1337/api/signup', {
@@ -67,6 +107,7 @@ export default function SignUp(props) {
             if (data.status === 'ok') {
                 props.handleClose()
                 console.log('User created') 
+                navigate('/Singup')
             }else{
                 alert('Invalid Signup')
                 console.log('User not created')
@@ -91,29 +132,39 @@ export default function SignUp(props) {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                <Form > 
+{/* Form*/}     <Form noValidate validated={validated} >  
                     <Row className="fullname">
                         <Col className="firstname" >
                              {/* First Name */}
                             <Form.Group className="mb-3" controlId="firstname.ControlInput"> 
                                 <Form.Control
+                                    required
                                     value={firstname}
                                     onChange={(e) => setFirstname(e.target.value)}
                                     type="text"
                                     placeholder="First Name"
                                     autoFocus
                                 />
+                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                <Form.Control.Feedback type="invalid">
+                                    Please enter your first name.
+                                </Form.Control.Feedback>
                             </Form.Group>
                         </Col>
                         <Col className="lastname">
                             {/* Last Name */}
                             <Form.Group className="mb-3" controlId="lastname.ControlInput">
                                 <Form.Control
+                                    required
                                     value={lastname}
                                     onChange={(e) => setLastname(e.target.value)}
                                     type="text"
                                     placeholder="Last Name"
                                 />
+                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                <Form.Control.Feedback type="invalid">
+                                    Please enter your last name.
+                                </Form.Control.Feedback>
                             </Form.Group>
                         </Col>
                     </Row>
@@ -123,18 +174,24 @@ export default function SignUp(props) {
                         setGender={setGender}
                         group="gender"
                         theme={props.theme}
+                        genders={genders}
                     />
                     <Row className="email">
                         <Col>
                             {/* Email */}
                             <Form.Group className="mb-3" controlId="email.ControlInput"> 
                                 <Form.Control
+                                    required
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     type="email"
                                     placeholder="Email Address"
                                     autoFocus
                                 />
+                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                <Form.Control.Feedback type="invalid">
+                                    Please enter a unique email address.
+                                </Form.Control.Feedback>
                                 <Form.Text className="text-muted">
                                 We'll never share your email with anyone else.
                                 </Form.Text>
@@ -146,11 +203,16 @@ export default function SignUp(props) {
                             {/* Address */}
                             <Form.Group className="mb-3" controlId="address.ControlInput">
                                 <Form.Control
+                                    required
                                     value={address}
                                     onChange={(e) => setAddress(e.target.value)}
                                     type="address"
                                     placeholder="Address"
                                 />
+                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                <Form.Control.Feedback type="invalid">
+                                    Please enter your address.
+                                </Form.Control.Feedback>
                             </Form.Group>
                         </Col>
                     </Row>
@@ -159,33 +221,48 @@ export default function SignUp(props) {
                             {/* Location */}
                             <Form.Group className="mb-3" controlId="location.ControlInput">
                                 <Form.Control
+                                    required
                                     value={country}
                                     onChange={(e) => setCountry(e.target.value)}
                                     type="country"
                                     placeholder="Country"
                                 />
+                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                <Form.Control.Feedback type="invalid">
+                                    Please enter your country.
+                                </Form.Control.Feedback>
                             </Form.Group>
                         </Col>
                         <Col>
                             {/* City */}
                             <Form.Group className="mb-3" controlId="city.ControlInput">
                                 <Form.Control
+                                    required
                                     value={city}
                                     onChange={(e) => setCity(e.target.value)}
                                     type="city"
                                     placeholder="City"
                                 />
+                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                <Form.Control.Feedback type="invalid">
+                                Please provide a valid city.
+                                </Form.Control.Feedback>
                             </Form.Group>
                         </Col>
                         <Col>
                             {/* Postcode */}
                             <Form.Group className="mb-3" controlId="postcode.ControlInput">
                                 <Form.Control
+                                    required
                                     value={postcode}
                                     onChange={(e) => setPostcode(e.target.value)}
                                     type="text"
                                     placeholder="Postcode"
                                 />
+                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                <Form.Control.Feedback type="invalid">
+                                Please provide a valid postcode.
+                                </Form.Control.Feedback>
                             </Form.Group>
                         </Col>
 
@@ -193,13 +270,18 @@ export default function SignUp(props) {
                     <Row className="username">
                         <Col>
                             {/* Username */}
-                            <Form.Group className="mb-3" controlId="username.ControlInput">
+                            <Form.Group className="mb-3" controlId="username">
                                 <Form.Control
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
+                                    required
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
                                     type="text"
                                     placeholder="Username"
                                 />
+                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                <Form.Control.Feedback type="invalid">
+                                Please choose a unique username.
+                                </Form.Control.Feedback>
                             </Form.Group>
                         </Col>
                     </Row>
@@ -208,15 +290,21 @@ export default function SignUp(props) {
                     <Row className="password">
                         <Col>
                              {/* Password */}
-                            <Form.Group className="mb-3" controlId="pass.formPlaintextPassword"> 
-                                    <Form.Control type="password" 
+                            <Form.Group className="mb-3" controlId="password"> 
+                                <Form.Control 
+                                    required
+                                    type="password" 
                                     value={password}
                                     minLength="6"
                                     maxLength="20"
                                     onChange={(e) => setPassword(e.target.value)}
                                     placeholder="Password" 
                                     aria-describedby="passwordHelpBlock"
-                                    />
+                                />
+                                <Form.Control.Feedback id="pass-feedback good">Looks good!</Form.Control.Feedback>
+                                <Form.Control.Feedback id="pass-feedback bad" type="invalid">
+                                    Please enter a password.
+                                </Form.Control.Feedback>
                                 <Form.Text id="passwordHelpBlock" muted>
                                     Your password must be 6-20 characters long.
                                 </Form.Text>
@@ -225,21 +313,26 @@ export default function SignUp(props) {
                     </Row>
                     <Row>
                         <Col>
-                             {/* Password */}
-                            <Form.Group className="mb-3" controlId="confpass.formPlaintextPassword"> 
-                                    <Form.Control 
+                             {/* Confirm Password */}
+                            <Form.Group className="mb-3" controlId="confpassword"> 
+                                <Form.Control 
+                                    required
+                                    type="password"
                                     value={confirmPassword}
                                     minLength="6"
                                     maxLength="20"
                                     onChange={(e) => setConfirmPassword(e.target.value)}
-                                    type="password" 
                                     placeholder="Confirm Password" 
-                                    />
+                                />
+                                <Form.Control.Feedback id="confpass-feedback-good">Looks good!</Form.Control.Feedback>
+                                <Form.Control.Feedback id="confpass-feedback-bad"type="invalid">
+                                    Please confirm your password.
+                                </Form.Control.Feedback>
                             </Form.Group>
                         </Col>
                     </Row>   
-                     <Form.Group className="mb-3" controlId="terms.formBasicCheckbox">
-                        <Form.Check type="checkbox" label="I have read and agreed to the terms and conditions" onChange={handleSignup}  />
+                     <Form.Group className="mb-3 bsh-none" controlId="terms-formBasicCheckbox">
+                        <Form.Check type="checkbox" id="terms-checkbox" label="I have read and agreed to the terms and conditions" onChange={handleSignup}  />
                     </Form.Group>
                     </Form>
                 </Modal.Body>

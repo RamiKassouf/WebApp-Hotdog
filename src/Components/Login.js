@@ -38,7 +38,7 @@ export default function Login(props) {
     }
 
     return (
-        <Nav.Link eventKey={2} href="#login">
+        <Nav.Link eventKey={2} >
             <Button className={props.theme} variant="primary" onClick={props.handleShow}>Sign In</Button>
             <Modal show={props.show} onHide={props.handleClose} contentClassName={props.theme} centered>
                 <Modal.Header closeButton>
