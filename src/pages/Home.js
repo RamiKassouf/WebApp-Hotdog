@@ -3,6 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import Header from"../Components/Header.js";
 import DogCarousel from "../Components/DogCarousel"
+import ReviewSlider from '../Components/ReviewSlider';
 export default function App() {
   const [theme, setTheme] = useState('light');
   const [invtheme, setInvTheme] = useState('dark');
@@ -42,6 +43,9 @@ export default function App() {
       showSignup={showSignup}
       handleSignupClose={handleSignupClose}
       handleSignupShow={handleSignupShow}
+      />
+      <ReviewSlider 
+      theme={theme}
       />
       <footer className='footer'>
         <p>Created by <a href="HotDogTM">HotDogTM</a></p>
