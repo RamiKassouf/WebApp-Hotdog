@@ -55,7 +55,7 @@ export default function DogCarousel(props) {
               >
               Create Account
             </Button>
-            <p>
+            <p className={`carousel-text ${props.theme}`}>
               Join us and start your journey to find the perfect match for your dog!
             </p>
         </Carousel.Caption>

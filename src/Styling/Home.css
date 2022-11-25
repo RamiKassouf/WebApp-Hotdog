@@ -19,19 +19,19 @@
   flex-direction: column;
 }
 /*Header CSS*/
-.logo {
+/* .logo {
   padding-bottom: 2px;
 }
 
 .light.btn-primary {
   --bs-btn-border-radius: 20px;
-  --bs-btn-color: black;
+  --bs-btn-color: rgba(135, 118, 118, 0.551);
   --bs-btn-bg: rgb(210, 188, 219);
   --bs-btn-border-color: rgb(210, 188, 219);
 
   --bs-btn-hover-color: white;
-  --bs-btn-hover-bg: rgba(128, 128, 128, 0.8);
-  --bs-btn-hover-border-color: rgba(128, 128, 128, 0.8);
+  --bs-btn-hover-bg: rgb(202, 102, 245);
+  --bs-btn-hover-border-color: rgb(207, 113, 244);
 
   --bs-btn-active-color: white;
   --bs-btn-active-bg: rgba(98, 69, 156, 0.4);
@@ -78,7 +78,7 @@
 
 .mt-7px {
   margin-top: 7px;
-}
+} */
 
 /* Modal */
 .modal-content{
@@ -194,31 +194,51 @@
   position: absolute;
 
 }
+.carousel-text.dark{
+  color: white;
+  font-weight: bold;
+}
+.carousel-text.light{
+  color: black;
+  font-weight: bold;
+}
 
 .carousel-img{
-  max-height: 90vh;
+  max-height: 93vh;
   /* object-fit: cover; */
 }
 
 /* Review CSS */
-.card-title{
-  border-bottom: #292929 10px;
+.review-header{
+  padding: 5px ;
+  display: flex;
 }
 .qm{
- position:relative;
- float: right;
-  width: 150px;
-
+  position:relative;
+  height: 10px;
+  bottom:75px;
+  font-family: sans-serif;
+  font-size: 5em;
+  font-weight: bold;
+  
 }
-.right{
-  float:right;
+.qm.dark{
+  color: rgb(156, 133, 225);
+}
+.qm.light{
+  color: rgba(98, 69, 156, 0.663);
+}
+.qm.right{
+  float: right;
+  bottom:105px;
+  right:5px;
 }
 .review{
   margin: 1em ;
 }
 .review.light{
   border-width: 2px;
-    border-color: rgb(210, 188, 219);
+  border-color: rgb(210, 188, 219);
 }
 
 .review.dark{
@@ -227,6 +247,9 @@
 }
 .reviewslider{
   margin-top: 10px;
+}
+.reviewslider.row{
+  --bs-gutter-x: 0 !important;
 }
 .reviewslider.dark{
   background-color: #292929;

@@ -5,17 +5,17 @@
 
 .light.btn-primary {
     --bs-btn-border-radius: 20px;
-    --bs-btn-color: black;
-    --bs-btn-bg: rgb(210, 188, 219);
-    --bs-btn-border-color: rgb(210, 188, 219);
+    --bs-btn-color: rgb(0, 0, 0);
+    --bs-btn-bg: rgb(228, 164, 254);
+    --bs-btn-border-color: rgb(228, 164, 254);
 
     --bs-btn-hover-color: white;
-    --bs-btn-hover-bg: rgba(128, 128, 128, 0.8);
-    --bs-btn-hover-border-color: rgba(128, 128, 128, 0.8);
+    --bs-btn-hover-bg: rgb(202, 102, 245);
+    --bs-btn-hover-border-color: rgb(202, 102, 245);
 
     --bs-btn-active-color: white;
-    --bs-btn-active-bg: rgba(98, 69, 156, 0.4);
-    --bs-btn-active-border-color: rgba(98, 69, 156, 0.8);
+    --bs-btn-active-bg: rgba(202, 102, 245, 0.6);
+    --bs-btn-active-border-color: rgba(202, 102, 245, 0.603);
 
 }
 
@@ -37,6 +37,10 @@
 .btn {
     --bs-btn-padding-x: 1.6rem;
     font-weight: bold;
+}
+
+.navbar {
+    --bs-navbar-padding-x: none;
 }
 
 .navbar-nav .form-check-input:checked {
