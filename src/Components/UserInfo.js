@@ -31,7 +31,7 @@ export default function UserSignUp(props) {
 
     const [checked, setChecked] = useState(false); 
     useEffect(() => {
-        if (props.show==false) {
+        if (props.show===false) {
             setChecked(false);
         }
     }, [props.show]);
@@ -69,7 +69,7 @@ export default function UserSignUp(props) {
                 if(e.checked){
                     e.setCustomValidity('');
                 }else{
-                    if (genders[0].checked==true || genders[1].checked==true || genders[2].checked==true) {
+                    if (genders[0].checked===true || genders[1].checked===true || genders[2].checked===true) {
                     e.setCustomValidity('')
                     }else{ e.setCustomValidity('Please select')}
                    
