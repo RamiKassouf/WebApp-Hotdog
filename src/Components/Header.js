@@ -2,6 +2,7 @@
 import HotDogLogo from "../Images/HotDogLogo.gif";
 import Login from "./Login";
 import UserSignUp from "./UserInfo";
+import Button from 'react-bootstrap/Button';
 //Navbar imports
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -43,6 +44,15 @@ function Header(props) {
               <NavDropdown.Item >Premium</NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
           <Nav>
             <Nav.Link as="li" className="mt-7px">
                 <Form.Switch label="Dark Mode" onChange={props.toggleTheme} checked={props.theme==='dark'}/>
