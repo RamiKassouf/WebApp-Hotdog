@@ -87,7 +87,7 @@ export default function Login(props) {
                 </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <h6>Dont't have an account? <a href="#SignUp" onClick={props.handleSwitchToSignup} >Sign Up</a></h6>
+                    <h6>Dont't have an account? <a href="#SignUp" onClick={props.handleSwitchToSignup} >Sign Up</a> </h6>
                 <Button className={props.theme} variant="primary" onClick={loginUser}>
                     Sign In
                 </Button>
