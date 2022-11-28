@@ -1,8 +1,8 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Button from "react-bootstrap/Button";
-import img1 from '../Images/TwoDogs-Carousel.jfif';
-import img2 from '../Images/TwoDogs-Flower-Wallpaper.jfif';
-import img3 from '../Images/DifferentDogs-wallpaper.jfif';
+import img1 from '../Images/dog2.jpg';
+import img2 from '../Images/dog3.jpg';
+import img3 from '../Images/dog3.jpg';
 
 export default function DogCarousel(props) {
   return (

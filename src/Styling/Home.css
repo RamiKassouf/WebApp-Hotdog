@@ -216,7 +216,6 @@
 .qm{
   position:relative;
   height: 10px;
-  bottom:75px;
   font-family: sans-serif;
   font-size: 5em;
   font-weight: bold;
@@ -228,10 +227,18 @@
 .qm.light{
   color: rgba(98, 69, 156, 0.663);
 }
+.qm.left{
+  top: 95px;
+  rotate: 180deg;
+}
 .qm.right{
   float: right;
   bottom:105px;
   right:5px;
+}
+.card-body{
+  padding-left: 43px;
+  padding-right: 43px;
 }
 .review{
   margin: 1em ;
@@ -261,7 +268,7 @@ footer{
   bottom: 0;
   right: 0;
   left:0;
-  background-color: rgb(98, 69, 156);
+  background-color: rgb(66, 50, 99);
   color: white;
   padding: 1em 0;
   display: flex;

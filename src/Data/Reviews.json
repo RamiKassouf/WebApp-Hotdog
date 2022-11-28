@@ -1,0 +1,22 @@
+{
+    "reviews":{
+        "key": 1,
+        "reviewer":"Jamie Smith",
+        "review":"Covid hit us really hard last year and Lucy had grown quite antisocial, but thanks to HotDog we managed to find her a partner. Lucy is now the proud mother of 6 and her partner has been comming around a lot. She seems very happy!"
+    },
+    {
+        "key": 2,
+        "reviewer":"Joe Hanks",
+        "review":"My boy max is very energetic,but also agressive so we don't really like to take him to crowded places. On the other hand, small dates wih another dog has been fruitfull. I also think my boy has found the one."
+    },
+    {
+        "key": 3,
+        "reviewer":"Sally Jones",
+        "review":"I've been using this service as a way to let my dog meet new friends, not really lovers. I'm surprised that it's gone really well Prince has met Rover, Stella and Ruffles. We're taling them to this park that was recommended and they're having a lot of fun."
+    },
+    {
+        "key": 4,
+        "reviewer":"Sally Jones", 
+        "review":"While my Dog found her match on this app, I also got the chance to meet the owner. My Darcy loves Eileen as much as she loves her dog Ruffus. And don't tell Eileen but I really like her too!"
+    }
+}
