@@ -42,7 +42,7 @@ function Header(props) {
               <NavDropdown.Item >Premium</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Nav>
+          <Nav className="nav-right">
             <Nav.Link as="li" className="mt-7px">
                 <Form.Switch label="Dark Mode" onChange={props.toggleTheme} checked={props.theme==='dark'}/>
             </Nav.Link>

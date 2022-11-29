@@ -39,11 +39,11 @@ export default function UserSignUp(props) {
     const handleSignup = () => {
         if(checked){
             setChecked(!checked); 
-            termscheckbox.setCustomValidity('');
+            termscheckbox.setCustomValidity('Accept terms and conditions');
         }else{
             setChecked(!checked); 
 
-            termscheckbox.setCustomValidity('Accept terms and conditions');
+            termscheckbox.setCustomValidity('');
         }
     }
     //backend functions
