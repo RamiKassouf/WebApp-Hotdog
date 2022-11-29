@@ -19,66 +19,6 @@
   flex-direction: column;
 }
 /*Header CSS*/
-/* .logo {
-  padding-bottom: 2px;
-}
-
-.light.btn-primary {
-  --bs-btn-border-radius: 20px;
-  --bs-btn-color: rgba(135, 118, 118, 0.551);
-  --bs-btn-bg: rgb(210, 188, 219);
-  --bs-btn-border-color: rgb(210, 188, 219);
-
-  --bs-btn-hover-color: white;
-  --bs-btn-hover-bg: rgb(202, 102, 245);
-  --bs-btn-hover-border-color: rgb(207, 113, 244);
-
-  --bs-btn-active-color: white;
-  --bs-btn-active-bg: rgba(98, 69, 156, 0.4);
-  --bs-btn-active-border-color: rgba(98, 69, 156, 0.8);
-
-}
-
-.dark.btn-primary {
-  --bs-btn-border-radius: 20px;
-  --bs-btn-color: white;
-  --bs-btn-bg: rgb(98, 69, 156);
-  --bs-btn-border-color: rgb(98, 69, 156);
-
-  --bs-btn-hover-color: white;
-  --bs-btn-hover-bg: rgba(63, 23, 143, 0.8);
-  --bs-btn-hover-border-color: rgba(63, 23, 143, 0.8);
-
-  --bs-btn-active-color: white;
-  --bs-btn-active-bg: rgba(52, 25, 105, 0.952);
-  --bs-btn-active-border-color: rgba(52, 25, 105, 0.952);
-}
-
-.btn {
-  --bs-btn-padding-x: 1.6rem;
-  font-weight: bold;
-}
-.navbar{
-  --bs-navbar-padding-x: none;
-}
-
-.navbar-nav .form-check-input:checked {
-  background-color: rgb(98, 69, 156);
-  border-color: rgb(98, 69, 156);
-}
-
-.navbar-nav .form-check-input:focus {
-  border-color: rgb(98, 69, 156);
-  box-shadow: 0 0 0 0.25rem rgb(98 69 156 / 25%);
-}
-
-#light .navbar-nav .form-check-input:focus {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='50' cy='50' r='40' fill='rgb(98 69 151 /50%25)' /%3E%3C/svg%3E ");
-}
-
-.mt-7px {
-  margin-top: 7px;
-} */
 
 /* Modal */
 .modal-content{
@@ -194,18 +134,33 @@
   position: absolute;
 
 }
-.carousel-text.dark{
+.carousel-caption{
+  bottom:34%;
+  left:-35%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.carousel-text{
+  line-height: 140px;
+  margin-bottom: 0;
+  font-size: 9.2vw;
+}
+.carousel-subtext{
+  font-size: 2.2vw;
+}
+.carousel-subtext.dark{
   color: white;
   font-weight: bold;
 }
-.carousel-text.light{
+.carousel-subtext.light{
   color: black;
   font-weight: bold;
 }
-
+#createaccountButton{
+  font-size: 1.1vw;
+  width: 11vw;
+}
 .carousel-img{
   max-height: 93vh;
-  /* object-fit: cover; */
 }
 
 /* Review CSS */
@@ -213,10 +168,15 @@
   padding: 5px ;
   display: flex;
 }
+.reviewer-name{
+  padding-left:5px;
+}
+.review-text {
+  padding-left: 5px;
+}
 .qm{
   position:relative;
   height: 10px;
-  bottom:75px;
   font-family: sans-serif;
   font-size: 5em;
   font-weight: bold;
@@ -228,10 +188,17 @@
 .qm.light{
   color: rgba(98, 69, 156, 0.663);
 }
+.qm.left{
+  top: 95px;
+  rotate: 180deg;
+}
 .qm.right{
   float: right;
   bottom:105px;
   right:5px;
+}
+.card-body{
+  padding: 16px 55px 32px 55px;
 }
 .review{
   margin: 1em ;
@@ -276,6 +243,7 @@ color: white;
   bottom: 0;
   right: 0;
   left:0;
+  background-color: rgb(66, 50, 99);
   color: white;
   padding: 1em 0;
   display: flex;

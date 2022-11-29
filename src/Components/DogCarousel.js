@@ -1,13 +1,12 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Button from "react-bootstrap/Button";
-import img1 from '../Images/TwoDogs-Carousel.jfif';
-import img2 from '../Images/TwoDogs-Flower-Wallpaper.jfif';
-import img3 from '../Images/DifferentDogs-wallpaper.jfif';
+import img1 from '../Images/dog2.jpg';
+import img2 from '../Images/dog3.jpg';
 
 export default function DogCarousel(props) {
   return (
     <div className="dogcarousel">
-    <Carousel variant={props.invtheme}>
+    <Carousel variant={props.invtheme} interval="10000">
       <Carousel.Item>
         {props.theme==="light"&&<img
           className="d-block w-100 carousel-img"
@@ -35,7 +34,7 @@ export default function DogCarousel(props) {
       <Carousel.Item>
         {props.theme==="light"&&<img
           className="d-block w-100 carousel-img"
-          src={img3}
+          src={img1}
           alt="Third slide"
         />}
         {props.theme==="dark"&&<img
@@ -46,18 +45,20 @@ export default function DogCarousel(props) {
           
       </Carousel.Item>
     </Carousel>
-        <Carousel.Caption>
-          <Button id="createaccountButton"
-              type="submit" 
-              className={props.theme} 
-              variant="primary" 
-              onClick={props.handleSignupShow} 
-              >
-              Create Account
-            </Button>
-            <p className={`carousel-text ${props.theme}`}>
-              Join us and start your journey to find the perfect match for your dog!
-            </p>
+        <Carousel.Caption className={props.theme}>
+          <h1 className="carousel-text">Welcome!</h1>
+          <p className={`carousel-subtext ${props.theme}`}>
+             Find the perfect match for<br /> your furry friend!
+          </p>
+          <Button id={`createaccountButton`}
+            type="submit" 
+            className={props.theme} 
+            variant="primary" 
+            onClick={props.handleSignupShow} 
+            >
+              Join Us
+          </Button>
+           
         </Carousel.Caption>
     </div>
   );

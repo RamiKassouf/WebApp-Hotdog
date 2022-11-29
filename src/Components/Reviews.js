@@ -9,11 +9,12 @@ export default function Reviews(props) {
         <span className={`qm left ${props.theme}`}>,,</span>
       </Card.Header>
       <Card.Body as="Col">
-        <Card.Title>Person's Name</Card.Title>
-        <Card.Text className='text-muted'>
-          This is a longer card with supporting text below as a natural
-          lead-in to additional content. This content is a little bit
-          longer.
+        <Card.Title className="reviewer-name">James Riachy</Card.Title>
+        <Card.Text className='review-text text-muted'>
+          Covid hit us really hard last year and Lucy had grown quite antisocial, 
+          but thanks to HotDog we managed to find her a partner. 
+          Lucy is now the proud mother of 6 and her partner has been comming around a lot. 
+          She seems very happy!
         </Card.Text>
       </Card.Body>
       <Card.Footer as="Col" bsPrefix='review-footer'>
