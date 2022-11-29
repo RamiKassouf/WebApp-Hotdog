@@ -256,12 +256,26 @@
 }
 
 /* footer */
-footer{
+
+
+.footer{
+  background-color: rgb(98, 69, 156);
+  margin-bottom: -20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-down .copy-right{
+color: white;
+}
+
+.footer-top{
   position: relative;
   bottom: 0;
   right: 0;
   left:0;
-  background-color: rgb(98, 69, 156);
   color: white;
   padding: 1em 0;
   display: flex;
@@ -271,32 +285,66 @@ footer{
 }
 
 
+
+
 .footer-left{
+  padding-top: 3%;
   text-align: center;
   width: 33%;
-  
+  list-style-type: none;
 
+}
+
+.footer-left h1{
+  text-align: center;
+  padding-left:7% ;
+  padding-bottom: 7%;
 }
 
 .footer-left >ul{
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  text-align: center;
+  width: 100%;
+  padding-top: 15%;
 }
 
+
+
+
+.footer-left >ul >li{
+  padding: 3%;
+  width: 100%;
+}
+
+
+
 .footer-mid{
+  padding-top: 3%;
   text-align: center;
   width: 33%;
-  text-align: center;
+  
   
   
 }
+
+.footer-mid >ul >li{
+  padding-bottom: 5%;
+  
+}
+
 .footer-mid >ul{
   list-style-type: none;
   margin: 0;
-  padding: 0;
-  list-style-type: none;
+  padding: 8%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 17px;
+  
   
 
   
@@ -306,10 +354,40 @@ footer{
   text-decoration: none;
 }
 .footer a:visited { text-decoration: none; }
-.footer a:hover { text-decoration: none; color: aliceblue; }
+.footer-mid a:hover { text-decoration: none; color: aliceblue; padding-left: 8px;transition: all 0.5s ease;}
+.footer a:hover { text-decoration: none; color: aliceblue;}
 .footer a:active { text-decoration: none; }
 
+
+.footer-left a:link{
+  display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+
+.footer-left a:hover{
+  color: #24262b;
+	background-color: #ffffff;
+}
+
+.footer-left >h3{
+  line-height: 2;
+  border-bottom: 2px solid currentColor;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+
+
 .footer-right{
+  padding-top: 3%;
   text-align: center;
   width: 33%;
   
@@ -317,10 +395,32 @@ footer{
   
 }
 
+.footer-right >h3{
+  line-height: 2;
+  border-bottom: 2px solid currentColor;
+  margin-left: 200px;
+  margin-right: 200px;
+
+}
+
+
+.footer-right >p{
+  padding-top: 8%;
+  font-size: 17px;
+}
+
 .footer-mid >p{
   list-style-type: none;
   margin-right: 0px;
   margin-left: 20px;
+  
+}
+
+.footer-mid >h3{
+  line-height: 2;
+  border-bottom: 2px solid currentColor;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .Input_news{
@@ -332,13 +432,22 @@ footer{
   
 }
 
-.footer-right>button{
-  border: 1px solid white;
-  border-radius: 10px;
-  color: black;
-  font-weight: bold;
-  background-color: rgb(210, 188, 219);
-  margin-left: 10px;
+
+
+.footer-right>p{
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+.footer-right>div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  text-align: center;
   
 }
 
@@ -349,4 +458,5 @@ footer{
   margin-bottom: 20px;
   color: white;
   font-size: 12px;
+  
 }
