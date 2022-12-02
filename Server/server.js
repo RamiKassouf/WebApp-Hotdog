@@ -8,8 +8,8 @@ const express=require('express');
 const app=express();
 const cors=require('cors');
 const mongoose=require('mongoose');
+const jwt=require('jsonwebtoken');
 const bcrypt=require('bcrypt');
-// const paseto=require('paseto');
 const User=require('./models/user.model');
 //use
 app.use(cors());
@@ -43,8 +43,7 @@ app.post('/api/signup',async (req, res) => {
                 username: req.body.username,
                 email: req.body.email,
                 password: newPassword,
-            })
-            res.json({ status: 'ok' })
+            }).then( res.json({ status: 'ok' }))
         }catch (err) {
 		res.json({ status: 'error', error: err })
 	}
@@ -64,29 +63,34 @@ app.post('/api/login', async (req, res) => {
 		user.password
 	)
     if(isPasswordValid){
-        res.json({status:'ok',user :user})
-    }else{
-        res.json({status:'error',error:'Invalid login'})
+        const token = jwt.sign(
+			{
+				firstname: user.firstname,
+				email: user.email,
+			},
+			'codesecret'
+		)
+
+		return res.json({ status: 'ok',  user: token })
+	} else {
+		return res.json({ status: 'error', user: false })
     }
 });
 //hello
-// app.post('/api/hello', async (req, res) => {
-//     const token = req.headers['x-access-token']
+app.post('/api/hello', async (req, res) => {
+    const token = req.headers['x-access-token']
 
-// 	try {
-// 		const decoded = paseto.verify(token, 'secret123')
-// 		const email = decoded.email
-// 		await User.updateOne(
-// 			{ email: email },
-// 			{ $set: { name: req.body.firstname } }
-// 		)
-
-// 		return res.json({ status: 'ok' })
-// 	} catch (error) {
-// 		console.log(error)
-// 		res.json({ status: 'error', error: 'invalid token' })
-// 	}
-// })
+	try {
+		const decoded = jwt.verify(token, 'codesecret')
+		const email = decoded.email
+		const user = await User.findOne({ email: email })
+        console.log(user)
+		return res.json({ status: 'ok', firstname: user.firstname })
+	} catch (error) {
+		console.log(error)
+		res.json({ status: 'error', error: 'invalid token' })
+	}
+})
 
 //listen
 app.listen(1337,()=>{

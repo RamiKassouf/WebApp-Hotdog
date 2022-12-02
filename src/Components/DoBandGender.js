@@ -47,18 +47,18 @@ export default function DoBandgender(props) {
                 <Row>
                     <Form.Label>Gender</Form.Label>
                 </Row>
-            <FormGroup onChange={(e)=>props.setGender(e.target.id)} >
-                <Row className={`${props.theme} gender`} >
-                {['Male','Female','Other'].map((type) => (
-                <Col key={type} id={`check-api-${type}`}>
-                    <Form.Check type="radio" id={`check-api-${type}`} feedback="You must agree before submitting." isInvalid>
-                    <Form.Check.Input name={props.group} type="radio" id={type} onChange={checkValid} />
-                    <Form.Check.Label htmlFor={type}>{type}</Form.Check.Label>
-                    </Form.Check>
-                </Col>
-                ))}
-                </Row>
-            </FormGroup>
+                <FormGroup onChange={(e)=>props.setGender(e.target.id)} >
+                    <Row className={`${props.theme} gender`} >
+                    {['Male','Female','Other'].map((type) => (
+                    <Col key={type} id={`check-api-${type}`}>
+                        <Form.Check type="radio" id={`check-api-${type}`} feedback="You must agree before submitting." isInvalid>
+                        <Form.Check.Input name={props.group} type="radio" id={type} onChange={checkValid} />
+                        <Form.Check.Label htmlFor={type}>{type}</Form.Check.Label>
+                        </Form.Check>
+                    </Col>
+                    ))}
+                    </Row>
+                </FormGroup>
             </Col>
         </Row>
     )

@@ -19,6 +19,7 @@ function Header(props) {
   }
 
 
+
   return (
     <Navbar sticky="top" collapseOnSelect expand="lg" bg={props.theme} variant={props.theme}>
       <Container>
@@ -44,7 +45,7 @@ function Header(props) {
           </Nav>
           <Nav className="nav-right">
             <Nav.Link as="li" className="mt-7px">
-                <Form.Switch label="Dark Mode" onChange={props.toggleTheme} checked={props.theme==='dark'}/>
+                <Form.Switch label="Dark Mode" onChange={props.toggleTheme} />
             </Nav.Link>
             <Nav.Link as="li">
                 <NavDropdown title={language} id="collasible-nav-dropdown2" menuVariant={props.theme} onClick={changelanguage}>
