@@ -3,7 +3,7 @@ import Col  from 'react-bootstrap/Col';
 
 export default function Reviews(props) {
   return (
-    <Col>
+    <Col >
       <Card className={`review ${props.theme}`} bg={props.theme} text={props.theme === 'light' ? 'dark' : 'white'}>
         <Card.Header bsPrefix='review-header'>
           <span className={`qm left ${props.theme}`}>,,</span>

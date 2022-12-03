@@ -2,12 +2,13 @@ const mongoose = require('mongoose')
 
 const Review = new mongoose.Schema(
 	{
-		reviewer: { type: String, required: true, unique: true },
+        id: {type: Number, required: true, unique: true},
+		reviewer: { type: String, required: true },
         review: { type: String, required: true },
 	},
 	{ collection: 'Reviews' }
 )
 
-const model = mongoose.model('Review', Review)
+const model = mongoose.model('Review',Review)
 
 module.exports = model
