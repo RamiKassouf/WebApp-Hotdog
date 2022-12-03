@@ -25,10 +25,14 @@ export const Container = styled.div`
       width: 50%;
       -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0);
       box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0);
-      border: 4px solid #00adb5;
-
+      border: 4px solid #black;
+      
       @media (min-width: 768px) {
         width: 80%;
+      }
+
+      @media (max-width: 600px) {
+        width: 200%;
       }
     `}
 `;
@@ -42,7 +46,7 @@ export const SearchInput = styled.input`
   line-height: 30px;
   outline: 0;
   border: 0;
-  font-size: 2rem;
+  font-size: 1.2rem;
   border-radius: 20px;
   padding: 0 20px;
   margin: 0;
