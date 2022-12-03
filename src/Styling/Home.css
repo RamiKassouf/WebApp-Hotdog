@@ -152,7 +152,7 @@
   font-weight: bold;
 }
 .carousel-subtext.light{
-  color: black;
+  color: rgb(0, 0, 0);
   font-weight: bold;
 }
 #createaccountButton{

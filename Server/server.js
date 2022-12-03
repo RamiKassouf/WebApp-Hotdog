@@ -11,6 +11,7 @@ const mongoose=require('mongoose');
 const jwt=require('jsonwebtoken');
 const bcrypt=require('bcrypt');
 const User=require('./models/user.model');
+const Review=require('./models/reviews.model');
 //use
 app.use(cors());
 app.use(express.json());
@@ -92,6 +93,15 @@ app.post('/api/hello', async (req, res) => {
 		res.json({ status: 'error', error: 'invalid token' })
 	}
 })
+//Reviews
+app.post('/api/reviews', async (req, res) => {
+    try {
+        const reviews = await Review.find({}).sort({ _id: -1 });
+        res.json(reviews);
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
 
 //listen
 app.listen(1337,()=>{

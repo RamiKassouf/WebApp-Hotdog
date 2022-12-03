@@ -9,12 +9,9 @@ export default function Reviews(props) {
           <span className={`qm left ${props.theme}`}>,,</span>
         </Card.Header>
         <Card.Body>
-          <Card.Title className="reviewer-name">James Riachy</Card.Title>
+          <Card.Title className="reviewer-name">{props.reviewer}</Card.Title>
           <Card.Text className='review-text text-muted'>
-            Covid hit us really hard last year and Lucy had grown quite antisocial, 
-            but thanks to HotDog we managed to find her a partner. 
-            Lucy is now the proud mother of 6 and her partner has been comming around a lot. 
-            She seems very happy!
+              {props.reviewText}
           </Card.Text>
         </Card.Body>
         <Card.Footer bsPrefix='review-footer'>

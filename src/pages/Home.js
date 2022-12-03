@@ -1,17 +1,13 @@
 import '../Styling/Home.css';
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Header from"../Components/Header.js";
 import DogCarousel from "../Components/DogCarousel"
 import ReviewSlider from '../Components/ReviewSlider';
 import Footer from '../Components/Footer';
-export default function App() {
-  const [theme, setTheme] = useState('light');
-  const [invtheme, setInvTheme] = useState('dark');
-  const toggleTheme = () => {
-    setTheme((curr)=> (curr === 'light' ? 'dark' : 'light'));
-    setInvTheme((curr)=> (curr === 'light' ? 'dark' : 'light'));
-  }
+import { ThemeContext } from '../Context/ThemeContext';
+
+export default function App(props) {
   //modals
   const [showSignup, setShowSignup] = useState(false);
   const handleSignupClose = () => {setShowSignup(false); }
@@ -24,12 +20,12 @@ export default function App() {
     handleLoginClose();
     handleSignupShow();
   }
+
+  const {theme} = useContext(ThemeContext);
   return (
     <div className="App" id={theme}>
       <Header 
       theme={theme}
-      invtheme={invtheme}
-      toggleTheme={toggleTheme}
       showSignup={showSignup}
       handleSignupClose={handleSignupClose}
       handleSignupShow={handleSignupShow}
@@ -40,7 +36,6 @@ export default function App() {
       />
       <DogCarousel
       theme={theme}
-      invtheme={invtheme}
       showSignup={showSignup}
       handleSignupClose={handleSignupClose}
       handleSignupShow={handleSignupShow}

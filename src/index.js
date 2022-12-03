@@ -6,10 +6,11 @@ import Home from './pages/Home';
 import Hello from './pages/Hello';
 import Signup from './pages/Signup';
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
-
+import {ThemeContextProvider} from "./Context/ThemeContext"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+      <ThemeContextProvider>
   <BrowserRouter>
     <Routes>
       <Route path="/" exact element={<Home />} />
@@ -17,4 +18,5 @@ root.render(
       <Route path="/hello" exact element={<Hello />} />
     </Routes>
   </BrowserRouter>
+      </ThemeContextProvider>
 );

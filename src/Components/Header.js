@@ -9,7 +9,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
 //useState for Modal components (Login and UserSignUp)
-
+import { useContext } from "react";
+import { ThemeContext } from "../Context/ThemeContext";
 
 function Header(props) {
   // Language Picker without babel and translation
@@ -18,7 +19,7 @@ function Header(props) {
     document.getElementById('collasible-nav-dropdown2').innerHTML = e.target.innerHTML;
   }
 
-
+  const {toggleTheme} = useContext(ThemeContext);
 
   return (
     <Navbar sticky="top" collapseOnSelect expand="lg" bg={props.theme} variant={props.theme}>
@@ -45,7 +46,7 @@ function Header(props) {
           </Nav>
           <Nav className="nav-right">
             <Nav.Link as="li" className="mt-7px">
-                <Form.Switch label="Dark Mode" onChange={props.toggleTheme} />
+                <Form.Switch label="Dark Mode" onChange={toggleTheme} />
             </Nav.Link>
             <Nav.Link as="li">
                 <NavDropdown title={language} id="collasible-nav-dropdown2" menuVariant={props.theme} onClick={changelanguage}>
