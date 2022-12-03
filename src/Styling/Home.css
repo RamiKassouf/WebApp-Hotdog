@@ -151,7 +151,7 @@
   font-weight: bold;
 }
 .carousel-subtext.light{
-  color: black;
+  color: rgb(0, 0, 0);
   font-weight: bold;
 }
 #createaccountButton{
@@ -172,6 +172,7 @@
 }
 .review-text {
   padding-left: 5px;
+  max-height: 450px;
 }
 .qm{
   position:relative;
@@ -201,6 +202,8 @@
 }
 .review{
   margin: 1em ;
+  max-height: 600px;
+  min-height: 150px;
 }
 .review.light{
   border-width: 2px;

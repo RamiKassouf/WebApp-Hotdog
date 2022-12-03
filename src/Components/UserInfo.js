@@ -108,11 +108,10 @@ export default function UserSignUp(props) {
             const data = await response.json()
             if (data.status === 'ok') {
                 props.handleClose()
-                console.log('User created') 
-                navigate('/Singup')
+                alert('User created') 
             }else{
                 alert('Invalid Signup')
-                console.log('User not created')
+                alert('User not created')
             }
         }
     }

@@ -9,7 +9,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
 //useState for Modal components (Login and UserSignUp)
-
+import { useContext } from "react";
+import { ThemeContext } from "../Context/ThemeContext";
 
 function Header(props) {
   // Language Picker without babel and translation
@@ -18,6 +19,7 @@ function Header(props) {
     document.getElementById('collasible-nav-dropdown2').innerHTML = e.target.innerHTML;
   }
 
+  const {toggleTheme} = useContext(ThemeContext);
 
   return (
     <Navbar sticky="top" collapseOnSelect expand="lg" bg={props.theme} variant={props.theme}>
@@ -35,16 +37,16 @@ function Header(props) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#Breeds">Breeds</Nav.Link>
-            <Nav.Link href="#Download">Download</Nav.Link>
+            <Nav.Link href="/Breeds">Breeds</Nav.Link>
+            <Nav.Link href="/Download">Download</Nav.Link>
             <NavDropdown title="Subscription" id="collasible-nav-dropdown" className="allign-middle" menuVariant={props.theme}>
-              <NavDropdown.Item >Free</NavDropdown.Item>
-              <NavDropdown.Item >Premium</NavDropdown.Item>
+              <NavDropdown.Item href='/Subscription/#'>Free</NavDropdown.Item>
+              <NavDropdown.Item href='/Subscription/#' >Premium</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav className="nav-right">
             <Nav.Link as="li" className="mt-7px">
-                <Form.Switch label="Dark Mode" onChange={props.toggleTheme} checked={props.theme==='dark'}/>
+                <Form.Switch label="Dark Mode" onChange={toggleTheme} />
             </Nav.Link>
             <Nav.Link as="li">
                 <NavDropdown title={language} id="collasible-nav-dropdown2" menuVariant={props.theme} onClick={changelanguage}>

@@ -27,9 +27,8 @@ export default function Login(props) {
 		})
 
 		const data = await response.json()
-        console.log(data)
-        if(data.status === 'ok'){
-            // localStorage.setItem('token', data.user)
+        if(data.user){
+            localStorage.setItem('token', data.user)
             props.handleClose()
             window.location.href ='/hello'
         }else{
