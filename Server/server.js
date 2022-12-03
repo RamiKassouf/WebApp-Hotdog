@@ -43,10 +43,11 @@ app.post('/api/signup',async (req, res) => {
                 username: req.body.username,
                 email: req.body.email,
                 password: newPassword,
-            }).then( res.json({ status: 'ok' }))
-        }catch (err) {
-		res.json({ status: 'error', error: err })
-	}
+            })
+			res.json({ status: 'ok' })
+		} catch (err) {
+			res.json({ status: 'error', error: err.message })
+		}
 })
 //login
 app.post('/api/login', async (req, res) => {
