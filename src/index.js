@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home';
 import Hello from './pages/Hello';
 import Breeds from './pages/Breeds';
+import Download from './pages/Download';
 import Subscription from './pages/Subscription';
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
 
@@ -17,14 +18,15 @@ import {ThemeContextProvider} from "./Context/ThemeContext"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-      <ThemeContextProvider>
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" exact element={<Home />} />
-      <Route path="/Breeds" exact element={<Breeds />} />
-      <Route path="/Subscription" exact element={<Subscription />} />
-      <Route path="/hello" exact element={<Hello />} />
-    </Routes>
-  </BrowserRouter>
-      </ThemeContextProvider>
+  <ThemeContextProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/Breeds" exact element={<Breeds />} />
+        <Route path="/Download" exact element={<Download />} />
+        <Route path="/Subscription" exact element={<Subscription />} />
+        <Route path="/hello" exact element={<Hello />} />
+      </Routes>
+    </BrowserRouter>
+  </ThemeContextProvider>
 );

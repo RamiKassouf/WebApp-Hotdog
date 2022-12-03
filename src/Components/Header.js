@@ -37,11 +37,11 @@ function Header(props) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#Breeds">Breeds</Nav.Link>
-            <Nav.Link href="#Download">Download</Nav.Link>
+            <Nav.Link href="/Breeds">Breeds</Nav.Link>
+            <Nav.Link href="/Download">Download</Nav.Link>
             <NavDropdown title="Subscription" id="collasible-nav-dropdown" className="allign-middle" menuVariant={props.theme}>
-              <NavDropdown.Item >Free</NavDropdown.Item>
-              <NavDropdown.Item >Premium</NavDropdown.Item>
+              <NavDropdown.Item href='/Subscription/#'>Free</NavDropdown.Item>
+              <NavDropdown.Item href='/Subscription/#' >Premium</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav className="nav-right">
