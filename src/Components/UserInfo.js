@@ -10,10 +10,14 @@ import Form from 'react-bootstrap/Form';
 // Modal Grid imports
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+//Context imports
+import { useContext } from "react";
+import  {SignupContext} from "../Context/SignupContext";
 //backend imports
 import { useNavigate } from "react-router-dom";
 
 export default function UserSignUp(props) {
+    const {showSignup,handleSignupClose,handleSignupShow} = useContext(SignupContext);
     //front end functions
     const [validated,setValidated]=useState(false);
     const genders=document.querySelectorAll('input[name].form-check-input');
@@ -31,10 +35,10 @@ export default function UserSignUp(props) {
 
     const [checked, setChecked] = useState(false); 
     useEffect(() => {
-        if (props.show===false) {
+        if (showSignup===false) {
             setChecked(false);
         }
-    }, [props.show]);
+    }, [showSignup]);
     
     const handleSignup = () => {
         if(checked){
@@ -107,7 +111,7 @@ export default function UserSignUp(props) {
             })
             const data = await response.json()
             if (data.status === 'ok') {
-                props.handleClose()
+                handleSignupClose()
                 alert('User created') 
             }else{
                 alert('Invalid Signup')
@@ -119,7 +123,7 @@ export default function UserSignUp(props) {
 
     return (
         <Nav.Link eventKey={2} href="Signup">
-            <Modal show={props.show} onHide={props.handleClose} contentClassName={props.theme} size='lg' centered>
+            <Modal show={showSignup} onHide={handleSignupClose} contentClassName={props.theme} size='lg' centered>
                 <Modal.Header closeButton>
                 <Modal.Title>
                     <img

@@ -53,7 +53,7 @@ export default  function Hello(props) {
             />
             <h1>Hello {name}</h1>
             <Footer
-
+            theme={theme}
             />
         </div>
     )

@@ -7,9 +7,13 @@ import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import Form from 'react-bootstrap/Form';
 
+//Context imports
+import { useContext } from "react";
+import  {SigninContext} from "../Context/SigninContext";
 //server imports
 
 export default function Login(props) {
+    const {show,handleClose,handleShow} = useContext(SigninContext);
     const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
     async function loginUser(event) {
@@ -29,7 +33,7 @@ export default function Login(props) {
 		const data = await response.json()
         if(data.user){
             localStorage.setItem('token', data.user)
-            props.handleClose()
+            handleClose()
             window.location.href ='/hello'
         }else{
             alert('Invalid login')
@@ -38,8 +42,8 @@ export default function Login(props) {
 
     return (
         <Nav.Link eventKey={2} >
-            <Button className={props.theme} variant="primary" onClick={props.handleShow}>Sign In</Button>
-            <Modal show={props.show} onHide={props.handleClose} contentClassName={props.theme} centered>
+            <Button className={props.theme} variant="primary" onClick={handleShow}>Sign In</Button>
+            <Modal show={show} onHide={handleClose} contentClassName={props.theme} centered>
                 <Modal.Header closeButton>
                 <Modal.Title>
                     <img

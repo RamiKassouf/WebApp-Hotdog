@@ -8,11 +8,19 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
-//useState for Modal components (Login and UserSignUp)
+//Context imports
 import { useContext } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
+import { SigninContext} from "../Context/SigninContext";
+import { SignupContext } from "../Context/SignupContext";
 
 function Header(props) {
+    const {handleClose,handleShow} = useContext(SigninContext);
+    const {handleSignupShow} = useContext(SignupContext);
+    const handleSwitchToSignup = () => {
+    handleClose();
+    handleSignupShow();
+  }
   // Language Picker without babel and translation
  var language = 'English';
  const changelanguage = (e) => {
@@ -55,21 +63,16 @@ function Header(props) {
                 <NavDropdown.Item >Arabic</NavDropdown.Item>
                 </NavDropdown>
             </Nav.Link>
-            <Login 
-              theme={props.theme}
-              invtheme={props.invtheme}
-              show={props.showLogin}
-              handleClose={props.handleLoginClose}
-              handleShow={props.handleLoginShow}
-              handleSwitchToSignup={props.handleSwitchToSignup}
-            />
-            <UserSignUp 
-              theme={props.theme}
-              invtheme={props.invtheme}
-              show={props.showSignup}
-              handleClose={props.handleSignupClose}
-              handleShow={props.handleSignupShow}
+
+              <Login 
+                theme={props.theme}
+                invtheme={props.invtheme}
+                handleSwitchToSignup={handleSwitchToSignup}
               />
+              <UserSignUp 
+                theme={props.theme}
+                invtheme={props.invtheme}
+                />
           </Nav>
         </Navbar.Collapse>
       </Container>

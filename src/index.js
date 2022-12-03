@@ -15,9 +15,13 @@ import { BrowserRouter, Route,Routes } from 'react-router-dom';
 
 //Context
 import {ThemeContextProvider} from "./Context/ThemeContext"
+import {SigninContextProvider} from './Context/SigninContext';
+import {SignupContextProvider} from './Context/SignupContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <SigninContextProvider>
+  <SignupContextProvider>    
   <ThemeContextProvider>
     <BrowserRouter>
       <Routes>
@@ -29,4 +33,6 @@ root.render(
       </Routes>
     </BrowserRouter>
   </ThemeContextProvider>
+  </SignupContextProvider>
+  </SigninContextProvider>
 );
