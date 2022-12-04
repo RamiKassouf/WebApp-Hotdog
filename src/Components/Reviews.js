@@ -8,7 +8,7 @@ export default function Reviews(props) {
         <Card.Header bsPrefix='review-header'>
           <span className={`qm left ${props.theme}`}>,,</span>
         </Card.Header>
-        <Card.Body>
+        <Card.Body className={props.className}>
           <Card.Title className="reviewer-name">{props.reviewer}</Card.Title>
           <Card.Text className='review-text text-muted'>
               {props.reviewText}
