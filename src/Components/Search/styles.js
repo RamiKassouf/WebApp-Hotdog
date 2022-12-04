@@ -27,11 +27,11 @@ export const Container = styled.div`
       box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0);
       border: 4px solid #black;
       
-      @media (min-width: 768px) {
+      @media (min-width: 800px) {
         width: 80%;
       }
 
-      @media (max-width: 600px) {
+      @media (max-width: 800px) {
         width: 200%;
       }
     `}

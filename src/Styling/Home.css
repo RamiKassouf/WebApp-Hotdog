@@ -124,6 +124,11 @@
 .reviewslider.dark{
   background-color: #292929;
 }
+@media only screen and (max-width: 800px) {
+  .reviewslider{
+    display: block;
+  }
+}
 
 /* end of Home CSS  */
 
