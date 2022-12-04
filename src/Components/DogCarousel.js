@@ -3,7 +3,10 @@ import Button from "react-bootstrap/Button";
 import img1 from '../Images/dog2.jpg';
 import img2 from '../Images/dog3.jpg';
 
+import { useContext } from "react";
+import { SignupContext } from '../Context/SignupContext';
 export default function DogCarousel(props) {
+    const {handleSignupShow} = useContext(SignupContext);
   return (
     <div className="dogcarousel">
     <Carousel variant={props.invtheme} interval="10000">
@@ -54,7 +57,7 @@ export default function DogCarousel(props) {
             type="submit" 
             className={props.theme} 
             variant="primary" 
-            onClick={props.handleSignupShow} 
+            onClick={handleSignupShow} 
             >
               Join Us
           </Button>

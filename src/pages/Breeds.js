@@ -4,7 +4,7 @@ import Reviews from "../Components/Reviews"
 import { Autocomplete, TextField } from '@mui/material';
 import Form from 'react-bootstrap/Form';
 //CSS
-import "../Styling/Signup.css"
+import '../Styling/Header-Footer.css';
 import "../Styling/Home.css"
 
 import { MDBInputGroup, MDBInput, MDBIcon, MDBAlert, MDBBtn } from 'mdb-react-ui-kit';

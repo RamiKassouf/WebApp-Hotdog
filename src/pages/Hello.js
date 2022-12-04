@@ -3,15 +3,17 @@ import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"
-import "../Styling/Signup.css"
-import "../Styling/Home.css"
+import UnderConstruction from "../Components/UnderConstruction";
+import '../Styling/Header-Footer.css';
 import jwt from 'jsonwebtoken'
 
 import {ThemeContext} from '../Context/ThemeContext'
+import { LoggedinContext } from "../Context/LoggedinContext";
 
 export default  function Hello(props) {
     const navigate = useNavigate();
     const [name, setName] = useState('');
+    const {locggedin, setLoggedin} = useContext(LoggedinContext);
 
     
     async function addName() {
@@ -37,23 +39,28 @@ export default  function Hello(props) {
                 localStorage.removeItem('token')
                 navigate('/', { replace: true })
             }else{
+                setLoggedin(true);
                 addName();
 
             }
+        }else{
+            navigate('/', { replace: true })
         }
     }, [])
     
     
     const {theme,toggleTheme} = useContext(ThemeContext);
     return(
-        <div>
+        <div id={theme}>
             <Header 
             theme={theme}
             toggleTheme={toggleTheme}
             />
-            <h1>Hello {name}</h1>
+            <UnderConstruction
+                user={name}
+            />
             <Footer
-
+            theme={theme}
             />
         </div>
     )
