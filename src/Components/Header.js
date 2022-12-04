@@ -2,6 +2,7 @@
 import HotDogLogo from "../Images/HotDogLogo.gif";
 import Login from "./Login";
 import UserSignUp from "./UserInfo";
+import ProfilePic from "./ProfilePic";
 //Navbar imports
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -13,10 +14,13 @@ import { useContext } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import { SigninContext} from "../Context/SigninContext";
 import { SignupContext } from "../Context/SignupContext";
+import {LoggedinContext} from "../Context/LoggedinContext";
 
 function Header(props) {
     const {handleClose,handleShow} = useContext(SigninContext);
     const {handleSignupShow} = useContext(SignupContext);
+    const {loggedin, setLoggedin} = useContext(LoggedinContext);
+
     const handleSwitchToSignup = () => {
     handleClose();
     handleSignupShow();
@@ -64,15 +68,16 @@ function Header(props) {
                 </NavDropdown>
             </Nav.Link>
 
-              <Login 
+              {(loggedin===false)&&<Login 
                 theme={props.theme}
                 invtheme={props.invtheme}
                 handleSwitchToSignup={handleSwitchToSignup}
-              />
-              <UserSignUp 
+                />}
+              {(loggedin===false)&&<UserSignUp 
                 theme={props.theme}
                 invtheme={props.invtheme}
-                />
+                />}
+              {(loggedin===true)&&<Nav.Item><ProfilePic theme={props.theme} /></Nav.Item>}
           </Nav>
         </Navbar.Collapse>
       </Container>

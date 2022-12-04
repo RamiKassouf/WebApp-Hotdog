@@ -4,7 +4,7 @@ import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 import Reviews from "../Components/Reviews"
 //CSS
-import "../Styling/Signup.css"
+import '../Styling/Header-Footer.css';
 import "../Styling/Home.css"
 //Context
 import { ThemeContext } from '../Context/ThemeContext';
