@@ -118,19 +118,19 @@ export default function Breeds() {
                     <Reviews
                     className="breed"
                     theme={theme}
-                    reviewer="Pomeranian"
-                    reviewText="This is a review"
+                    reviewer="Husky"
+                    reviewText="This is a Husky"
                     />
                     <Reviews
                     className="breed"
                     theme={theme}
-                    reviewer="Pomeranian"
-                    reviewText="This is a review"
+                    reviewer="Golden Retriever"
+                    reviewText="This is a Golden Retriever"
                     />
                     <Reviews
                     className="breed"
                     theme={theme}
-                    reviewer="pug"
+                    reviewer="Pug"
                     reviewText="This is a review"
                     />
                 </div>
