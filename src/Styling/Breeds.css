@@ -1,12 +1,28 @@
+.searchbar-input.light{
+    background-color: white;
+    color: black;
+}
+.searchbar-input.dark{
+    background-color: #292929;
+    color: white;
+}
+.searchbar-input:focus{
+    box-shadow: none;
+    border-color: #ced4da;
+}
+.searchbar-input{
+    border-color: #ced4da;
+}
+.breeds{
+    margin: auto;
+    justify-content: center;
+}
 .breeds-searchbar{
-    width: fit-content;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    justify-items: center;
     margin: 10px;
-    border-bottom: 5px;
-    border-bottom-style: solid;
-    border-bottom-color: #e6e6e6;
 
 }
 .breeds-title{
@@ -25,7 +41,6 @@
 .searchResults {
     position: absolute;
     width: auto;
-    border: #ced4da  solid;
     border-width: 0px 1px 1px 1px;
     border-bottom-left-radius: .375rem;
     border-bottom-right-radius: .375rem;
@@ -37,9 +52,17 @@
 }
 .light.searchResults {
     background-color: #fafafa;
+
+}
+.light.searchResults .searchResult{
+    color: black;
+}
+.dark.searchResults .searchResult{
+    color: white;
 }
 .dark.searchResults {
     background-color: #292929;
+    color:white;
 }
 
 .searchResult{
@@ -51,3 +74,41 @@
     color: black;
     z-index: 101;
 }
+
+/* Card CSS */
+.dogList .row{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    --bs-gutter-x: 0 !important;
+}
+.dogList .row .col{
+    height: inherit;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+}
+
+.dog{
+    margin: 0 1em;
+    height: 100%;
+}
+.dog.light{
+    border-width: 2px;
+    border-color: rgb(210, 188, 219);
+}
+.dog.dark{
+    border-width: 2px;
+    border-color: rgb(98, 69, 156) ;
+}
+
+.dog-name{
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 5px;
+
+    padding-left: 5px;
+}
+
+.dog-description{
+    padding-left: 5px;
+}
+
