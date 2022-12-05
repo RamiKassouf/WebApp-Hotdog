@@ -1,0 +1,53 @@
+.breeds-searchbar{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    border-bottom: 5px;
+    border-bottom-style: solid;
+    border-bottom-color: #e6e6e6;
+
+}
+.breeds-title{
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
+.searchbar{
+    min-width: 300px;
+    width: auto;
+    display: block;
+    z-index: 100;
+}
+.searchResults {
+    position: absolute;
+    width: auto;
+    border: #ced4da  solid;
+    border-width: 0px 1px 1px 1px;
+    border-bottom-left-radius: .375rem;
+    border-bottom-right-radius: .375rem;
+    margin: 0;
+    min-width: 300px;
+    padding: 0;
+    translate: 0 -4px;
+    z-index: 100;
+}
+.light.searchResults {
+    background-color: #fafafa;
+}
+.dark.searchResults {
+    background-color: #292929;
+}
+
+.searchResult{
+    border-bottom: 1px solid #ced4da;
+    padding: 10px;
+    padding-left: 0;
+    margin-left: 0;
+    list-style: none;
+    color: black;
+    z-index: 101;
+}
