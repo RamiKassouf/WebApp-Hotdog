@@ -17,8 +17,8 @@ export default function Breeds() {
     const [searchInput, setSearchInput]= useState('');
     const [searchword, setSearchword] = useState('');
     const [breeds, setBreeds] = useState([]);
-    const inputRef = useRef();
-
+    const inputRef = useRef(null);
+    useOutsideAlerter(inputRef);
 
     const elements=document.getElementsByClassName("breed");
 
@@ -34,6 +34,9 @@ export default function Breeds() {
             }
         }
 
+    const displayNone = () => {
+        (document.getElementById("searchResults")).style.display = "none";
+    }
     
     useEffect(() => {
         async function fetchBreeds(){
@@ -78,10 +81,11 @@ export default function Breeds() {
                                 <Form.Control 
                                     type="text" 
                                     placeholder="Search" 
-                                    onChange={(e)  => {
+                                    onChange={(e)  =>{ 
                                         setSearchInput((e.target.value).trimStart() );
                                         setSearch(e.target.value.trim());
                                     }}
+                                    onMouseDown={() => {document.getElementById("searchResults").style.display = "block"}}
                                     onKeyDown={handleSearch}
                                     value = {searchInput}
                                     ref={inputRef}
@@ -90,8 +94,8 @@ export default function Breeds() {
                                 <Row className={`searchResults ${theme}`}>
                                     <ul  id="searchResults">
                                         {breeds.map((breed,index) =>
-                                            <Col>
-                                                <li key={index} 
+                                            <Col key={index}>
+                                                <li  
                                                 className='searchResult' 
                                                 onClick= {
                                                 () => {
@@ -135,4 +139,20 @@ export default function Breeds() {
                 />
             </div>
         )
+}
+
+function useOutsideAlerter(ref) {
+  useEffect(() => {
+ 
+    // Function for click event
+    function handleOutsideClick(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        document.getElementById("searchResults").style.display = "none";
+      }
+    }
+ 
+    // Adding click event listener
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [ref]);
 }
