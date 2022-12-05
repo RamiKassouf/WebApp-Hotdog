@@ -14,7 +14,7 @@ var collection;
 
 
 
-server.get("/search", async (request, response) => {
+server.post("/search", async (request, response) => {
     try {
         let result = await collection.aggregate([
             {
