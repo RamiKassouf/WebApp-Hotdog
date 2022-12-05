@@ -1,6 +1,7 @@
 //Components
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"
+import UnderConstruction from "../Components/UnderConstruction";
 //CSS
 import '../Styling/Header-Footer.css';
 //Context
@@ -73,6 +74,7 @@ export default function Subscription() {
             <Header
             theme={theme}
             />
+<<<<<<< HEAD
             <div className="Sub_title_container">
                  <h1 className="Sub_title">Subscription</h1>
             </div>
@@ -87,6 +89,9 @@ export default function Subscription() {
                     </div>
                     </section>
                 
+=======
+            <UnderConstruction />
+>>>>>>> 5522c5603825de218e5defa3668b0532d1427cd4
             <Footer
             theme={theme}
             />

@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"
+import UnderConstruction from "../Components/UnderConstruction";
 import '../Styling/Header-Footer.css';
 import jwt from 'jsonwebtoken'
 
@@ -50,12 +51,14 @@ export default  function Hello(props) {
     
     const {theme,toggleTheme} = useContext(ThemeContext);
     return(
-        <div>
+        <div id={theme}>
             <Header 
             theme={theme}
             toggleTheme={toggleTheme}
             />
-            <h1>Hello {name}</h1>
+            <UnderConstruction
+                user={name}
+            />
             <Footer
             theme={theme}
             />

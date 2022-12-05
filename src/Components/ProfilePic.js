@@ -11,6 +11,9 @@ export default function ProfilePic(props) {
         localStorage.removeItem('token');
         window.location.href= '/';
     }
+    const switchToProfilePage = () => {
+        window.location.href= '/hello';
+    }
 
 
     return (
@@ -18,7 +21,7 @@ export default function ProfilePic(props) {
             <Dropdown.Toggle as="img" src={profilepicture} width="30px" height="30px" alt="profilepicture" className="profilepic-img"  id="profilepic-dropdown">
             </Dropdown.Toggle>
             <Dropdown.Menu variant={props.theme} className="profilepic-dropdown">
-                <Dropdown.Item >My Profile</Dropdown.Item>
+                <Dropdown.Item onClick={switchToProfilePage}>My Profile</Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={handleLogout}>Sign out</Dropdown.Item>
             </Dropdown.Menu>
