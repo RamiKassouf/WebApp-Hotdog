@@ -82,7 +82,7 @@ export default function Breeds() {
                                         setSearchInput((e.target.value).trimStart() );
                                         setSearch(e.target.value.trim());
                                     }}
-                                    onSubmit={handleSearch}
+                                    onKeyDown={handleSearch}
                                     value = {searchInput}
                                     ref={inputRef}
                                 />
@@ -96,6 +96,7 @@ export default function Breeds() {
                                                 onClick= {
                                                 () => {
                                                     setSearchInput(breed);
+                                                    setSearch(breed);
                                                     inputRef.current.focus();
                                                     document.getElementById("searchResults").style.display = "none";
                                                 }}>{breed}</li>
