@@ -10,20 +10,31 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
 //Context imports
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import { SigninContext} from "../Context/SigninContext";
 import { SignupContext } from "../Context/SignupContext";
 import {LoggedinContext} from "../Context/LoggedinContext";
 
 function Header(props) {
-    const {handleClose,handleShow} = useContext(SigninContext);
-    const {handleSignupShow} = useContext(SignupContext);
-    const {loggedin, setLoggedin} = useContext(LoggedinContext);
+  const {theme,toggleTheme} = useContext(ThemeContext);
+  const {handleClose,handleShow} = useContext(SigninContext);
+  const {handleSignupShow} = useContext(SignupContext);
+  const {loggedin, setLoggedin} = useContext(LoggedinContext);
 
-    const handleSwitchToSignup = () => {
-    handleClose();
-    handleSignupShow();
+  useEffect(() => {
+    if(localStorage.getItem('theme')==='dark'){
+      document.getElementById('theme-toggle').checked = true;
+    }
+  }, [])
+  const Capitalize = (self) => {
+      return self.charAt(0).toUpperCase() + self.slice(1);
+    }
+
+
+  const handleSwitchToSignup = () => {
+  handleClose();
+  handleSignupShow();
   }
   // Language Picker without babel and translation
  var language = 'English';
@@ -31,7 +42,6 @@ function Header(props) {
     document.getElementById('collasible-nav-dropdown2').innerHTML = e.target.innerHTML;
   }
 
-  const {toggleTheme} = useContext(ThemeContext);
 
   return (
     <Navbar sticky="top" collapseOnSelect expand="lg" bg={props.theme} variant={props.theme}>
@@ -54,11 +64,12 @@ function Header(props) {
             <NavDropdown title="Subscription" id="collasible-nav-dropdown" className="allign-middle" menuVariant={props.theme}>
               <NavDropdown.Item href='/Subscription/#'>Free</NavDropdown.Item>
               <NavDropdown.Item href='/Subscription/#' >Premium</NavDropdown.Item>
+              <NavDropdown.Item href='/Subscription/#' >Platinum</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav className="nav-right">
             <Nav.Link as="li" className="mt-7px">
-                <Form.Switch label="Dark Mode" onChange={toggleTheme} />
+                <Form.Switch id="theme-toggle" label={`${Capitalize(props.theme)} Mode`} onChange={toggleTheme} />
             </Nav.Link>
             <Nav.Link as="li">
                 <NavDropdown title={language} id="collasible-nav-dropdown2" menuVariant={props.theme} onClick={changelanguage}>

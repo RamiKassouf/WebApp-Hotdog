@@ -48,7 +48,7 @@
   font-weight: bold;
 }
 .carousel-subtext.light{
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: bold;
 }
 #createaccountButton{
@@ -104,7 +104,6 @@
   border-width: 2px;
   border-color: rgb(210, 188, 219);
 }
-
 .review.dark{
   border-width: 2px;
   border-color: rgb(98, 69, 156) ;
@@ -131,4 +130,7 @@
 }
 
 /* end of Home CSS  */
+
+
+
 

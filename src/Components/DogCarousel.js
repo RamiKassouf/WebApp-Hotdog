@@ -1,7 +1,11 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Button from "react-bootstrap/Button";
 import img1 from '../Images/dog2.jpg';
-import img2 from '../Images/dog3.jpg';
+import img2 from '../Images/dog10.jpg';
+import img3 from '../Images/dog12.jpg';
+import img4 from '../Images/dog7.jpg';
+import img5 from '../Images/dog13.jpg';
+import img6 from '../Images/dog6.jpg';
 
 import { useContext } from "react";
 import { SignupContext } from '../Context/SignupContext';
@@ -25,24 +29,24 @@ export default function DogCarousel(props) {
       <Carousel.Item>
         {props.theme==="light"&&<img
           className="d-block w-100 carousel-img"
-          src={img1}
+          src={img3}
           alt="Second slide"
         />}
         {props.theme==="dark"&&<img
           className="d-block w-100 carousel-img"
-          src={img2}
+          src={img5}
           alt="Second slide"
         />}
       </Carousel.Item>
       <Carousel.Item>
         {props.theme==="light"&&<img
           className="d-block w-100 carousel-img"
-          src={img1}
+          src={img4}
           alt="Third slide"
         />}
         {props.theme==="dark"&&<img
           className="d-block w-100 carousel-img"
-          src={img2}
+          src={img6}
           alt="Third slide"
           />}
           

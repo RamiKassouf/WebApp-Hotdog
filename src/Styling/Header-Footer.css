@@ -42,6 +42,9 @@
 .navbar {
     --bs-navbar-padding-x: none;
 }
+.navbar-collapse{
+    border: 10px #050505 ;
+}
 
 .navbar-nav .form-check-input:checked {
     background-color: rgb(98, 69, 156);
