@@ -82,7 +82,7 @@ export default function Subscription() {
                     <div className="container">
                         <div className="row">
                         {
-                            myPrices.map( (obj) =>{return<SubCard data={obj}></SubCard>})   // store data in myPrices map to card 
+                            myPrices.map( (obj) =>{return <SubCard data={obj}></SubCard>})   // store data in myPrices map to card 
                         }
                         </div>
                     </div>

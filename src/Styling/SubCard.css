@@ -40,6 +40,7 @@ section.pricing {
   }
   
   .pricing .card-price {
+    color:black;
     font-size: 3rem;
     margin: 0;
   }
@@ -49,6 +50,7 @@ section.pricing {
   }
   
   .pricing ul li {
+    color: black;
     margin-bottom: 1rem;
   }
   
@@ -79,7 +81,8 @@ section.pricing {
     margin-left: 70%;
     margin-bottom:-20% ;
 }
- 
+
+
   
   /* Hover Effects on Card */
   
