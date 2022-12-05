@@ -87,7 +87,6 @@ export default function Subscription() {
                         </div>
                     </div>
                     </section>
-                
             <Footer
             theme={theme}
             />
