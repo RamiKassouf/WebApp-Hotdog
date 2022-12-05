@@ -51,9 +51,11 @@ function Header(props) {
           <Nav className="me-auto">
             <Nav.Link href="/Breeds">Breeds</Nav.Link>
             <Nav.Link href="/Download">Download</Nav.Link>
+            <Nav.Link href="/Swiper">Swiper</Nav.Link>
             <NavDropdown title="Subscription" id="collasible-nav-dropdown" className="allign-middle" menuVariant={props.theme}>
               <NavDropdown.Item href='/Subscription/#'>Free</NavDropdown.Item>
               <NavDropdown.Item href='/Subscription/#' >Premium</NavDropdown.Item>
+              <NavDropdown.Item href='/Subscription/#' >Platinum</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav className="nav-right">

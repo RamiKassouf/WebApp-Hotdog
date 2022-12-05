@@ -10,6 +10,7 @@ import Hello from './pages/Hello';
 import Breeds from './pages/Breeds';
 import Download from './pages/Download';
 import Subscription from './pages/Subscription';
+import Swiper from './pages/Swiper';
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
 
 
@@ -32,6 +33,7 @@ root.render(
         <Route path="/Download" exact element={<Download />} />
         <Route path="/Subscription" exact element={<Subscription />} />
         <Route path="/hello" exact element={<Hello />} />
+        <Route path="/Swiper" exact element={<Swiper />} />
       </Routes>
     </BrowserRouter>
   </ThemeContextProvider>
